@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .circle-bullet {
+    list-style-image: url("/list-bullet.png");
+    @apply [&>li]:pl-2;
+    @apply last:[&>li]:mb-0;
+  }
+
+  .app-table {
+    @apply w-full;
+    @apply m-0;
+    @apply border-collapse;
+
+    @apply [&_td]:text-left;
+  }
+  .app-table th {
+    @apply text-left;
+    @apply font-normal;
+    @apply text-xs;
+  }
+  .app-table th,
+  .app-table td {
+    @apply whitespace-nowrap;
+  }
+
+  .app-table td:first-child,
+  .app-table th:first-child {
+    @apply pl-8;
+  }
+  .app-table td:last-child,
+  .app-table th:last-child {
+    @apply pr-8;
+  }
+}
+
+
+@layer utilities {
+  .box-center {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light dark;
+  /* color: rgba(255, 255, 255, 0.87); */
+  color: #ffffff;
+  background-color: #161e28;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+select {
+  appearance: none;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+
+  max-width: 100vw;
+  max-height: 100vh;
+
+  overflow-x: hidden;
+}
